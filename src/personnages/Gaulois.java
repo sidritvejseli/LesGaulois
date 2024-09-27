@@ -37,7 +37,11 @@ public class Gaulois {
 
 	public static void main(String[] args) {
 		Gaulois asterix = new Gaulois("Asterix", 8);
+		Romain romain = new Romain("romain", 10);
 		System.out.println(asterix);
+		System.out.println(romain);
+		asterix.frapper(romain);
+		romain.recevoirCoup(2);
 	}
 }
 
