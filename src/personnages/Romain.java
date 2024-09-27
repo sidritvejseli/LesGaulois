@@ -5,8 +5,10 @@ public class Romain {
 	private int force;
 
 	public Romain(String nom, int force) {
+		
 		this.nom = nom;
 		this.force = force;
+
 	}
 
 	public String getNom() {
@@ -22,11 +24,14 @@ public class Romain {
 	}
 
 	public void recevoirCoup(int forceCoup) {
+		assert (force > 0);
+		int force_init = force;
 		force -= forceCoup;
 		if (force > 0) {
 			parler("Aïe");
 		} else {
 			parler("J'abandonne...");
 		}
+		assert (force < force_init);//postcondition 
 	}
 }
