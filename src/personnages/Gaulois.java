@@ -24,7 +24,7 @@ public class Gaulois {
 		return "Le Gaulois " + nom + " : ";
 	}
 	
-	private void boirPotion(int forcePotion) {
+	public void boirePotion(int forcePotion) {
 		effetPotion = forcePotion;
 		parler("Merce Druide, je sens que ma force est "+ Integer.toString(effetPotion) +" fois décuplée");
 	}
@@ -42,11 +42,30 @@ public class Gaulois {
 
 	public static void main(String[] args) {
 		Gaulois asterix = new Gaulois("Asterix", 8);
-		Romain romain = new Romain("romain", 10);
-		System.out.println(asterix);
-		System.out.println(romain);
+		Gaulois obelix = new Gaulois("Obélix", 25);
+		Druide panoramix = new Druide("Panoramix", 5, 10);
+		panoramix.preparePotion();
+		int force = panoramix.getForcePotion();
+
+		if (panoramix.getForcePotion() <= 7) {
+			System.out.println(
+					"Je n'ai pas trouvé tous les ingrédients, ma potion est\n" + "seulement de force " + force);
+		} else {
+			System.out.println("J'ai préparé\n" + "une super potion de force " + force);
+		}
+		Romain romain = new Romain("Minnus", 10);
+		panoramix.booster(obelix);
+		obelix.parler("Par Bélénos, ce n'est pas juste !");
+		panoramix.booster(asterix);
+		asterix.parler("Bonjour");
+		romain.parler("UN GAU");
 		asterix.frapper(romain);
-		romain.recevoirCoup(2);
+		
+	
+
+
+	
+
 	}
 }
 

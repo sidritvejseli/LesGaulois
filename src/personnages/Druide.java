@@ -37,6 +37,17 @@ public class Druide {
 //		this.effetPotionMin
 
 	}
+	
+	public void booster(Gaulois gaulois) {
+		if (gaulois.getNom() == "Obélix") {
+			System.out.println("Non, Obélix !... Tu n’auras pas de potion\n"
+					+ "magique !");
+		}
+		else {
+			gaulois.boirePotion(getForcePotion());
+		}
+	}
+
 
 	private String prendreParole() {
 		return "Le druide " + nom + " : ";
@@ -48,13 +59,7 @@ public class Druide {
 		System.out.println(panoramix);
 
 		panoramix.preparePotion();
-		int force = panoramix.getForcePotion();
-		if (panoramix.forcePotion <= 7) {
-			System.out.println(
-					"Je n'ai pas trouvé tous les ingrédients, ma potion est\n" + "seulement de force " + force);
-		} else {
-			System.out.println("J'ai préparé\n" + "une super potion de force " + force);
-		}
+		int force = panoramix.getForcePotion();}
 	}
 
-}
+
